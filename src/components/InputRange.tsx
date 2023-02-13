@@ -44,7 +44,7 @@ export const InputRange = ({
     if (rangeVal > max) {
       updateField(mappedName, max)
     }
-  }, [rangeVal, min, max])
+  }, [rangeVal, min, max, updateField, mappedName])
 
   const [isActive, setIsActive] = useState(false)
   const rangeRef = useRef<HTMLInputElement>(null)

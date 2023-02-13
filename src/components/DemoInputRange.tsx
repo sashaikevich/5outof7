@@ -44,7 +44,7 @@ const DemoInputRange = ({
     if (val > max) {
       updateVal(max)
     }
-  }, [val, min, max])
+  }, [val, min, max, updateVal])
 
   const [isActive, setIsActive] = useState(false)
   const rangeRef = useRef<HTMLInputElement>(null)
@@ -101,6 +101,7 @@ const DemoInputRange = ({
           "custom-range",
           warning ? "custom-range-warning" : "custom-range-regular",
           "relative",
+          //@ts-ignore
           rangeSize[size]
         )}>
         <input
