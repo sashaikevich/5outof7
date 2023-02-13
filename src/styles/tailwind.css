@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Qanelas;
+    letter-spacing: 0.03em;
+  }
+  .redesign *:focus {
+    @apply ring outline-0 ring-redi-primary/30;
+  }
+  .font-qanelas {
+    font-family: Qanelas;
+  }
+}
+
+/* Redesign styles below */
+/* Custom range input */
+@layer utilities {
+  .no-ring {
+    @apply focus:ring-0 focus:ring-offset-0;
+  }
+
+  /*  range  */
+  .custom-range input[type="range"] {
+    @apply appearance-none w-full rounded-full cursor-pointer;
+  }
+  .custom-range input[type="range"]:focus {
+    outline: none;
+  }
+  .custom-range input[type="range"]::-moz-focus-outer {
+    @apply border-0;
+  }
+  .custom-range-regular input[type="range"] {
+    @apply bg-redi-borders bg-gradient-to-t from-redi-primary to-redi-primary bg-no-repeat;
+  }
+  .custom-range-warning input[type="range"] {
+    @apply bg-redi-borders bg-gradient-to-t from-redi-danger to-redi-danger bg-no-repeat;
+  }
+
+  /*  range  track */
+  .custom-range input[type="range"]::-webkit-slider-runnable-track {
+    @apply rounded-full bg-redi-borders shadow-none h-[6px] w-full border-0 bg-redi-placeholder;
+  }
+  .custom-range input[type="range"]::-moz-range-track {
+    @apply rounded-full bg-redi-borders shadow-none h-[6px] w-full border-0 bg-redi-placeholder;
+  }
+  .custom-range input[type="range"]::-webkit-slider-runnable-track {
+    @apply appearance-none shadow-none border-none bg-transparent;
+  }
+
+  /*  range thumb  */
+  .custom-range input[type="range"]::-webkit-slider-thumb {
+    @apply appearance-none cursor-pointer w-4 h-4 border-2 border-solid border-white  rounded-full mt-[-6px];
+  }
+  .custom-range-regular input[type="range"]::-webkit-slider-thumb {
+    @apply bg-redi-primary shadow-control-light-blue;
+  }
+  .custom-range-warning input[type="range"]::-webkit-slider-thumb {
+    @apply bg-redi-danger shadow-control-light-red;
+  }
+
+  .custom-range input[type="range"]::-moz-range-thumb {
+    @apply appearance-none cursor-pointer w-4 h-4 border-2 border-solid border-white  rounded-full mt-[-6px];
+  }
+  .custom-range-regular input[type="range"]::-moz-range-thumb {
+    @apply bg-redi-primary shadow-control-light-blue;
+  }
+  .custom-range-warning input[type="range"]::-moz-range-thumb {
+    @apply bg-redi-danger shadow-control-light-red;
+  }
+}
